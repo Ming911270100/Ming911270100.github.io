@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>target-input</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- 1. Define some markup -->
+    <input id="foo" type="text" value="【TB】https://m.tb.cn/h.UUY3lez?tk=zcz9d0JjdQL CZ0001 「大佬帮帮我，戳一下，揪咪～」">
+    <button class="btn" data-clipboard-action="copy" data-clipboard-target="#foo">銘01</button>
+    <br>
+    <input id="foo1" type="text" value="【淘宝】https://m.tb.cn/h.UfHNuAp?tk=6QMRd0Q4ce5 CZ3457 「大佬幫幫蛾，戳下，meow~」">
+    <button class="btn" data-clipboard-action="copy" data-clipboard-target="#foo1">銘02</button>
+    <br>
+    <input id="foo2" type="text" value="【淘宝】https://m.tb.cn/h.U5oEpop?tk=zQuZd0Q4gQ5 CZ3457 「哈尼，帮力点点，感恩的心」">
+    <button class="btn" data-clipboard-action="copy" data-clipboard-target="#foo2">銘03</button>
+    <br>
+    <input id="foo3" type="text" value="">
+    <button class="btn" data-clipboard-action="copy" data-clipboard-target="#foo3">温</button>
+    <br>
+
+	
+    <!-- 2. Include library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+
+    <!-- 3. Instantiate clipboard -->
+    
+    <script>
+    var clipboard = new ClipboardJS('.btn');
+
+    clipboard.on('success', function(e) {
+        //top.location.href='taobao://';
+        window.location.href="taobao://";
+        console.log(e);
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+    </script>
+</body>
+</html>
